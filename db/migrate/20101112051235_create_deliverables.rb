@@ -3,7 +3,8 @@ class CreateDeliverables < ActiveRecord::Migration
     create_table :deliverables do |t|
       t.string :name
       t.integer :version
-      t.string :location_uri
+      t.string :deliverable_file_name
+      t.string :deliverable_content_type
       t.date :submission_date
       t.string :comments
       t.string :task_name
