@@ -7,15 +7,31 @@ Factory.define :person, :class => Person do |p|
   p.image_uri "/images/mascot.jpg"
 end
 
-Factory.define :vache, :parent => :person  do |p|
+Factory.define :vachestaff, :parent => :person  do |p|
   p.persistence_token Time.now.to_f.to_s
   p.first_name "VacheStaff"
   p.last_name "Shirikian"
   p.human_name "Vache Staff Shirikian"
-  p.email "vache.shirikian@sv.cmu.edu"
+  p.email "vache.staff.shirikian@sv.cmu.edu"
   p.image_uri "/images/mascot.jpg"
-  p.webiso_account "vshiriki@andrew.cmu.edu"
   p.is_staff 1
+end
+
+sleep(0.02)
+
+Factory.define :vache, :parent => :person  do |p|
+  p.is_student 1
+  p.is_part_time 1
+  p.graduation_year "2011"
+  p.masters_program "SE"
+  p.masters_track "Tech"
+  p.twiki_name "VacheShirikian"
+  p.first_name "Vache"
+  p.last_name "Shirikian"
+  p.human_name "Vache Shirikian"
+  p.image_uri "/images/mascot.jpg"
+  p.email "vache.shirikian@sv.cmu.edu"
+  p.webiso_account "vshiriki@andrew.cmu.edu"
 end
 
 sleep(0.02)
@@ -138,10 +154,12 @@ Factory.define :team_triumphant, :class => Team do |t|
  t.person_name "Awe Smith"
  t.person_name2 "Betty Ross"
  t.person_name3 "Charlie Moss"
+ t.person_name4 "Vache Shirikian"
 end
 
 
-
+vachestaff = Factory.create(:vachestaff)
+vache = Factory.create(:vache)
 Factory.create(:todd)
 martin = Factory.create(:martin)
 Factory.create(:ed)
