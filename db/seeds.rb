@@ -7,6 +7,19 @@ Factory.define :person, :class => Person do |p|
   p.image_uri "/images/mascot.jpg"
 end
 
+Factory.define :vache, :parent => :person  do |p|
+  p.persistence_token Time.now.to_f.to_s
+  p.first_name "VacheStaff"
+  p.last_name "Shirikian"
+  p.human_name "Vache Staff Shirikian"
+  p.email "vache.shirikian@sv.cmu.edu"
+  p.image_uri "/images/mascot.jpg"
+  p.webiso_account "vshiriki@andrew.cmu.edu"
+  p.is_staff 1
+end
+
+sleep(0.02)
+
 Factory.define :todd, :parent => :person  do |p|
   p.persistence_token Time.now.to_f.to_s
   p.first_name "Todd"

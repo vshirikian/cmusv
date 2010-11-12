@@ -1,0 +1,35 @@
+<h1>New deliverable</h1>
+
+<% form_for(@deliverable) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :version %><br />
+    <%= f.text_field :version %>
+  </p>
+  <p>
+    <%= f.label :location_uri %><br />
+    <%= f.text_field :location_uri %>
+  </p>
+  <p>
+    <%= f.label :submission_date %><br />
+    <%= f.date_select :submission_date %>
+  </p>
+  <p>
+    <%= f.label :comments %><br />
+    <%= f.text_field :comments %>
+  </p>
+  <p>
+    <%= f.label :task_name %><br />
+    <%= f.text_field :task_name %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', deliverables_path %>

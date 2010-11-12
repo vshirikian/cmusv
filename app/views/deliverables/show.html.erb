@@ -1,0 +1,33 @@
+<p>
+  <b>Name:</b>
+  <%=h @deliverable.name %>
+</p>
+
+<p>
+  <b>Version:</b>
+  <%=h @deliverable.version %>
+</p>
+
+<p>
+  <b>Location uri:</b>
+  <%=h @deliverable.location_uri %>
+</p>
+
+<p>
+  <b>Submission date:</b>
+  <%=h @deliverable.submission_date %>
+</p>
+
+<p>
+  <b>Comments:</b>
+  <%=h @deliverable.comments %>
+</p>
+
+<p>
+  <b>Task name:</b>
+  <%=h @deliverable.task_name %>
+</p>
+
+
+<%= link_to 'Edit', edit_deliverable_path(@deliverable) %> |
+<%= link_to 'Back', deliverables_path %>

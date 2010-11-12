@@ -79,8 +79,8 @@ GEM
       rspec (= 1.3.1)
     ruby-debug-base (0.10.3)
       linecache (>= 0.3)
-    ruby-debug-ide (0.4.10)
-      rake (>= 0.8.1)
+    ruby-debug-ide (0.4.6)
+      ruby-debug-base (~> 0.10.3.0)
     ruby-openid (2.1.8)
     ruby-openid-apps-discovery (1.2.0)
       ruby-openid (>= 2.1.7)
@@ -127,8 +127,8 @@ DEPENDENCIES
   rdoc (= 2.4.3)
   rspec
   rspec-rails
-  ruby-debug-base
-  ruby-debug-ide
+  ruby-debug-base (= 0.10.3)
+  ruby-debug-ide (= 0.4.6)
   ruby-openid
   ruby-openid-apps-discovery
   shoulda
