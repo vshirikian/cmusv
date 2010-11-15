@@ -209,4 +209,18 @@ class Person < ActiveRecord::Base
 #     end
 #   end
 
+   def cur_teams
+    current_year = Date.today.year()
+    current_semester = ApplicationController.current_semester()
+
+    teams.all :joins => :course, :conditions => ['courses.semester = ? AND courses.year = ?', current_semester, current_year]
+  end
+
+  def past_teams
+    current_year = Date.today.year()
+    current_semester = ApplicationController.current_semester()
+
+    teams.all :joins => :course, :conditions => ['courses.semester != ? OR courses.year != ?', current_semester, current_year]
+  end
+
 end
