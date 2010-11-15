@@ -16,7 +16,7 @@
 <h1>My Teams - <%= @person.human_name %> is teaching the course</h1>
 <% for year in @teams_map.keys.sort.reverse %>
   <% for semester in ["fall", "summer", "spring"] %>
-  <% next if (semester.capitalize == @current_semester and year == @current_year) or @teams_map[year][semester].nil? %>
+  <% next if @teams_map[year][semester].nil? %>
   <h2><%= semester.capitalize %> <%= year %> Teams</h2>
     <%= render :partial => "teams/twiki_index", :locals => { :teams => @teams_map[year][semester], :show_course => true, :show_student_photos => false, :show_photo_view_link => false, :show_new_teams_link => false } %>
     <p><%= @person.first_name %> taught <b><%= @teams_students_map[year][semester] %></b> students in <%= semester.capitalize %> <%= year %></p>
