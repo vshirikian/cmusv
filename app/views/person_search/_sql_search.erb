@@ -1,0 +1,9 @@
+<!-- <div style='border-right: solid 3px #7f7f7f;'> -->
+<div id='filterBox'>
+  <% form_tag "/person_search", :method => "get" do %>
+    Company: <%= text_field_tag :company, params[:company] %><br>
+    Graduation Year: <%= text_field_tag :graduation_year, params[:graduation_year] %><br>
+    Master's Track: <%= text_field_tag :masters_program, params[:masters_program] %><br>
+    <%= submit_tag "search" %>
+  <% end %>
+</div>
